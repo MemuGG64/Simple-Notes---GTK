@@ -1,6 +1,12 @@
 import os
 import json
+import sys
 from pathlib import Path
+
+def get_config_dir():
+    if sys.platform == "darwin":
+        return os.path.expanduser("~/Library/Application Support/SimpleNotes-GTK")
+    return os.path.expanduser("~/.config")
 
 class ConfigManager:
     DEFAULT_CONFIG = {
@@ -27,7 +33,7 @@ class ConfigManager:
 
     def __init__(self, settings_file=None):
         if settings_file is None:
-            self.settings_file = os.path.expanduser("~/.config/sng_config.json")
+            self.settings_file = os.path.join(get_config_dir(), "sng_config.json")
         else:
             self.settings_file = settings_file
         
