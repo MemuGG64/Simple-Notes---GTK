@@ -2,6 +2,7 @@
 import gi
 import os
 import json
+import sys
 import time
 import re
 import webbrowser
@@ -24,8 +25,12 @@ VERSION = "1.2.1"
 GITHUB_REPO = "MemuGG64/SimpleNotes-GTK"
 
 # Process identity
-GLib.set_prgname('simplenotes-gtk')
-GLib.set_application_name('SimpleNotes-GTK')
+if sys.platform == "darwin":
+    GLib.set_prgname('io.github.memugg64.SimpleNotesGTK')
+    GLib.set_application_name('SimpleNotes-GTK')
+else:
+    GLib.set_prgname('simplenotes-gtk')
+    GLib.set_application_name('SimpleNotes-GTK')
 
 class SimpleNotes_GTK(Gtk.Window):
     def __init__(self):

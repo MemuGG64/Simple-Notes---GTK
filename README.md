@@ -52,6 +52,7 @@ Run the script:
 ```Bash
 python3 SimpleNotes.py
 ```
-  
+   
 **Disclaimer:**  
 AI was used to make this app
+

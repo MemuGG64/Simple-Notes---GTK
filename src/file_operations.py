@@ -1,6 +1,8 @@
 import os
 import json
 import shutil
+import subprocess
+import sys
 import time
 from pathlib import Path
 from gi.repository import Gio
@@ -107,11 +109,18 @@ class FileOperations:
 
     def delete_note(self, path):
         try:
-            # Try trashing first
+            if sys.platform == "darwin":
+                result = subprocess.run(
+                    ["osascript", "-e",
+                     f'tell app "Finder" to delete (POSIX file "{path}" as alias)'],
+                    capture_output=True, text=True, timeout=10
+                )
+                if result.returncode == 0:
+                    return True, None
             file = Gio.File.new_for_path(path)
             file.trash(None)
             return True, None
-        except Exception as e:
+        except Exception:
             try:
                 os.remove(path)
                 return True, None
