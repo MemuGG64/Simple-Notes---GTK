@@ -19,7 +19,7 @@ or as a simple day to day notetaking app for day to day use.
 
 ## Instalation
 
-📦 Option 1: Flatpak.
+### 📦 Option 1: Flatpak.
 
 Download the `simplenotes.flatpak` from the [latest Release](https://github.com/MemuGG64/SimpleNotes_GTK/releases).
 
@@ -27,15 +27,16 @@ Install it by double-clicking the file or using the terminal:
 ```Bash
 flatpak install ./simplenotes.flatpak
 ```
-
-📦 Option 2: Debian Package.
+---
+### 📦 Option 2: Debian Package.
 
 Download the [latest Release](https://github.com/MemuGG64/SimpleNotes_GTK/releases).  
 Install it by oppening the .deb or using your terminal:
 ```Bash
 sudo apt install ./simplenotes-gtk_1.1.0_all.deb
 ```
-🛠️ Option 2: Run from Source
+---
+### 🛠️ Option 3: Run from Source
 
 If you prefer to run the application without installing it, Clone the repository:
 ```Bash
@@ -50,7 +51,8 @@ Run the script:
 ```Bash
 python3 SimpleNotes.py
 ```
-#Option 3. MacOs
+---
+### 🍎️ Option 3. MacOs
 **Homebrew**
 Install dependencies
 ```
